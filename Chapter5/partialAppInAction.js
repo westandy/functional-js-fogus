@@ -73,3 +73,16 @@ const validateCommand = condition1(
   validator('arg must have the correct keys', hasKeys('msg', 'type'))
 );
 const createCommand = partial(validateCommand, identity);
+// console.log(createCommand({})); // arg must have the right keys
+// console.log(createCommand(21)); // arg must be a map, arg must have right keys
+// console.log(createCommand({ msg: '', type: '' })); // no errors
+
+// Expand on the keys for a command
+const createLaunchCommand = partial1(
+  condition1(validator('arg must have the count down', hasKeys('countDown'))),
+  createCommand
+);
+// console.log(createLaunchCommand({ msg: '', type: '' })); // arg must have the count down
+// console.log(createLaunchCommand({ msg: '', type: '', countDown: 10 })); // no errors
+
+module.export = { createLaunchCommand, createCommand, validateCommand, isEven };
