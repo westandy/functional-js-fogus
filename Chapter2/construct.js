@@ -1,4 +1,4 @@
-const construct = (head, tail) => [head, ...tail];
+const construct = (head, tail) => [head].concat(tail);
 
 // console.log(construct(42, [1, 2, 3]));
 
