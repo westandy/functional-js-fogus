@@ -7,15 +7,13 @@ const depthSearch = (graph, nodes, seen) => {
   }
 
   const [node, ...more] = nodes;
-  if (seen.includes(node)) {
-    return depthSearch(graph, more, seen);
-  } else {
-    return depthSearch(
-      graph,
-      nexts(graph, node).concat(more),
-      construct(node, seen)
-    );
-  }
+  return seen.includes(node)
+    ? depthSearch(graph, more, seen)
+    : depthSearch(
+        graph,
+        nexts(graph, node).concat(more),
+        construct(node, seen)
+      );
 };
 
 const influences = [
