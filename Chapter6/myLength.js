@@ -1,7 +1,7 @@
 const existy = require('../Chapter2/existy');
 
 const myLength = array => {
-  // if ( _.isEmptry(ary) )
+  // if ( _.isEmpty(ary) )
   if (!existy(array) || !array[0]) {
     return 0;
   } else {
