@@ -27,5 +27,5 @@ const influences = [
   ['Self', 'Lua'],
   ['Self', 'JavaScript']
 ];
-console.log(nexts(influences, 'Lisp'));
+// console.log(nexts(influences, 'Lisp'));
 module.exports = { nexts };

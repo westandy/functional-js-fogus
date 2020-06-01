@@ -12,3 +12,5 @@ const myLength = array => {
 };
 
 // console.log(myLength([1, 2, 3, 4, 5]));
+
+module.exports = myLength;
